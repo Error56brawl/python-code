@@ -1,0 +1,4 @@
+data = {"name":"abc" , (1,2): 1 , [3,5]:3 ,  {1:3 , 2:1}: 5}
+
+#cannot use list as dictonary key as its unhashable 
+#cannot use dict as dictonary key as its unhashable 
