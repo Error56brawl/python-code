@@ -1,13 +1,13 @@
-text = "programming"
-freq={}
-for ch in text:
-    freq.setdefault(ch,0)
-    freq[ch] += 1
-print(freq)
+def fun(para1 , para2):
+    x = 10
+    y = 20
+    z = a + b   
 
-from collections import defaultdict
-freq = defaultdict(int)
-for ch in text:
-    freq[ch] += 1
-print(freq)
 
+total = fun.__code__.co_nlocals
+parameters = fun.__code__.co_argcount
+
+total_localVariables = total - parameters
+print("total: ",total)
+print("parameters: ",parameters)
+print("local variables: ",total_localVariables)

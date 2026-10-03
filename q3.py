@@ -1,20 +1,29 @@
-my_dict = {}
-my_dict["name"] = "anurag"
-my_dict["age"] = 19
+def caesar_cipher(text, shift,my_dict):
+    result = ""
 
-my_dict["course"] = "CSE"
-my_dict["gender"] = "male"
+    for ch in text:
+        if ch.isupper():
+            c = chr((ord(ch) - ord('A') + shift) % 26 + ord('A'))
+            my_dict[ch] = c
+            result += c
 
-my_dict.pop("age")
-my_dict["college"] = "iiitp"
-my_dict.pop("gender")
+        elif ch.islower():
+            d = chr((ord(ch) - ord('a') + shift) % 26 + ord('a'))
+            my_dict[ch] = d
+            result += d
 
-my_dict["age"] = 19
+        else:
+            result += ch
 
-print(my_dict)
-
-#since python 3.7+ there is no change in the order even if dict is unordered this thing is 
-#ensured by PyDictKeysObject 
-
+    print(my_dict)
+    return result
 
 
+text = input("Enter text: ")
+shift = int(input("Enter shift: "))
+my_dict={}
+encrypted = caesar_cipher(text, shift,my_dict)
+print("Encrypted text:", encrypted)
+
+decrypted = caesar_cipher(encrypted, -shift,my_dict)
+print("Decrypted text:", decrypted)

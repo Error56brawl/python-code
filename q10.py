@@ -1,9 +1,20 @@
-import sys
+def append_item(item, item_list=[]):
+    item_list.append(item)
+    return item_list
 
-dict_10 = {i: i for i in range(10)}
-dict_100 = {i: i for i in range(100)}
-dict_1000 = {i: i for i in range(1000)}
+print(append_item(10))
+print(append_item(20))
+print(append_item(30))
 
-print("Memory used by dictionary with 10 keys:", sys.getsizeof(dict_10), "bytes")
-print("Memory used by dictionary with 100 keys:", sys.getsizeof(dict_100), "bytes")
-print("Memory used by dictionary with 1000 keys:", sys.getsizeof(dict_1000), "bytes")
+
+print("USING NONE")
+def append_item(item, item_list=None):
+    if item_list is None:
+        item_list = []
+
+    item_list.append(item)
+    return item_list
+
+print(append_item(10))
+print(append_item(20))
+print(append_item(30))

@@ -1,2 +1,15 @@
-my_dict = {i:(i**2 if i%2==0 else i**3) for i in range(1,21) if(i**2 if i%2==0 else i**3)%4==0}
-print(my_dict)
+def fun(n):
+    print(0,end=" ")
+    print(1,end = " ")
+    first = 0
+    second = 1
+    for i in range(n-2):
+        num = first + second
+        print(num,end=" ")
+        first = second
+        second = num
+
+n = int(input("Enter num: "))
+fun(n)
+
+
